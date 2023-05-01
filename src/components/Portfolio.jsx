@@ -1,39 +1,12 @@
 import React from "react";
-import reactWeather from "../assets/portfolio/reactWeather.jpg";
-import reduxTodolist from "../assets/portfolio/redux-todolist.png";
-import starwars from "../assets/portfolio/starwars.png";
-import memoryGame from "../assets/portfolio/memory-game.png";
+import { portfolio_data as portfolios } from "../data";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
 import Image from "next/image";
 
-const portfolios = [
-  {
-    id: 1,
-    title: "Weather Forcast App",
-    imgSrc: reactWeather,
-    url: "weather-forcast",
-  },
-  {
-    id: 2,
-    title: "Redux Todolist",
-    imgSrc: reduxTodolist,
-    url: "redux-todolist",
-  },
-  {
-    id: 3,
-    title: "Starwars Info App",
-    imgSrc: starwars,
-    url: "starwars-info",
-  },
-  {
-    id: 4,
-    title: "Memmory Game App",
-    imgSrc: memoryGame,
-    url: "memory-game",
-  },
-];
+const lastPortfolios = portfolios.slice(0, 4);
+
 function Portfolio() {
   return (
     <section id="portfolio" className="w-full">
@@ -47,7 +20,7 @@ function Portfolio() {
         </p>
         {/* Projects Grid */}
         <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-          {portfolios.map(({ id, title, url, imgSrc }) => (
+          {lastPortfolios.map(({ id, title, url, imgSrc }) => (
             <Link key={id} href={`/portfolio/${url}`}>
               <article className="shadow-md shadow-gray-500 rounded-xl overflow-hidden group">
                 <figure className="overflow-hidden rounded-xl ">

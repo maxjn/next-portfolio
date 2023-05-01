@@ -1,18 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { socials_data as socials } from "@/data";
 
 import ContactImg from "../assets/contact.jpg";
 
-const socials = [
-  { id: 1, url: "https://github.com/maxjn", child: <FaGithub size={25} /> },
-  {
-    id: 2,
-    url: "https://www.linkedin.com/in/maxjn/",
-    child: <FaLinkedin size={25} />,
-  },
-];
 function Contact() {
   return (
     <section id="contact" className="w-full">
@@ -39,7 +31,7 @@ function Contact() {
           </p>
           <div className="grid grid-cols-2 w-4/5 gap-10 mx-auto mt-8">
             {socials.map(({ id, url, child }) => (
-              <Link key={id} href={`/${url}`} scroll={false}>
+              <Link key={id} href={`${url}`} scroll={false}>
                 <div className="flex items-center justify-center p-3 shadow-md shadow-blue-300 rounded-full hover:scale-110 duration-200">
                   {child}
                 </div>
@@ -47,6 +39,7 @@ function Contact() {
             ))}
           </div>
         </div>
+        {/* Form */}
         <div className=" w-full md:w-1/2 h-full rounded-xl p-4">
           <div className="py-4 text-left">
             <form
