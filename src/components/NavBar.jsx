@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function NavBar() {
@@ -12,14 +12,32 @@ function NavBar() {
   ];
 
   const socials = [
-    { id: 1, url: "#", child: <FaGithub size={25} /> },
-    { id: 2, url: "#", child: <FaLinkedin size={25} /> },
+    { id: 1, url: "https://github.com/maxjn", child: <FaGithub size={25} /> },
+    {
+      id: 2,
+      url: "https://www.linkedin.com/in/maxjn/",
+      child: <FaLinkedin size={25} />,
+    },
   ];
 
   const [nav, setNav] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const sub = window.addEventListener("scroll", () => {
+      setScroll(window.scrollY >= 90);
+      console.log(scroll);
+    });
+
+    return sub;
+  }, []);
 
   return (
-    <header className="bg-white text-black w-full h-20 fixed z-10 duration-200 ease-in">
+    <header
+      className={`w-full h-20 fixed z-10 duration-200 ease-in ${
+        scroll ? " bg-black text-white " : " bg-white text-black"
+      }`}
+    >
       <div className="flex justify-between items-center max-w-screen-xl mx-auto p-4 ">
         <Link href="/#home">
           <h1 className="text-3xl lg:text-4xl underline underline-offset-2 font-bold uppercase  ">
@@ -29,7 +47,7 @@ function NavBar() {
         <nav>
           <ul className="hidden md:flex ">
             {links.map(({ id, url }) => (
-              <Link key={id} href={`/#${url}`}>
+              <Link key={id} href={`/#${url}`} scroll={false}>
                 <li className="uppercase ms-10 hover:scale-105 duration-300 transition ease-out text-sm tracking-wider ">
                   {url}
                 </li>
@@ -42,6 +60,7 @@ function NavBar() {
         </div>
       </div>
 
+      {/* offcanvas menu Startr*/}
       <div
         className={`offcanvas w-full h-full fixed top-0  bg-black/70 backdrop-blur ease-in ${
           nav ? "left-0" : " left-[-100%] "
@@ -52,7 +71,6 @@ function NavBar() {
             nav ? "left-0" : " left-[-100%] "
           }`}
         >
-          {/* offcanvas header */}
           <div>
             <div className="flex items-center justify-between">
               <Link href="/#home">
@@ -69,8 +87,11 @@ function NavBar() {
           <nav className="mt-24">
             <ul className="flex flex-col">
               {links.map(({ id, url }) => (
-                <Link key={id} href={`/#${url}`}>
-                  <li className="uppercase py-4 text-2xl tracking-wider ">
+                <Link key={id} href={`/#${url}`} scroll={false}>
+                  <li
+                    className="uppercase py-4 text-2xl tracking-wider "
+                    onClick={() => setNav(false)}
+                  >
                     {url}
                   </li>
                 </Link>
@@ -89,6 +110,7 @@ function NavBar() {
           </div>
         </div>
       </div>
+      {/* offcanvas menu Ends*/}
     </header>
   );
 }
