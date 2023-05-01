@@ -1,25 +1,9 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaBars, FaTimes, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { socials_data as socials, links_data as links } from "@/data";
 
 function NavBar() {
-  const links = [
-    { id: 1, url: "home" },
-    { id: 2, url: "portfolio" },
-    { id: 3, url: "experience" },
-    { id: 4, url: "me" },
-    { id: 5, url: "contact" },
-  ];
-
-  const socials = [
-    { id: 1, url: "https://github.com/maxjn", child: <FaGithub size={25} /> },
-    {
-      id: 2,
-      url: "https://www.linkedin.com/in/maxjn/",
-      child: <FaLinkedin size={25} />,
-    },
-  ];
-
   const [nav, setNav] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -101,7 +85,7 @@ function NavBar() {
           {/* Social Links */}
           <div className="grid grid-cols-2 gap-10 w-4/5 mx-auto mt-24">
             {socials.map(({ id, url, child }) => (
-              <Link key={id} href={`/${url}`}>
+              <Link key={id} href={`${url}`}>
                 <div className="flex items-center justify-center p-3 shadow-md shadow-white rounded-full">
                   {child}
                 </div>
