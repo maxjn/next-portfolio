@@ -1,0 +1,5 @@
+- added index Components
+- added smooth scrolling
+- fixed menu close when clicking
+- added scroll classes to navbar
+- added action to contact form
