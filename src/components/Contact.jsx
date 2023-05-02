@@ -77,7 +77,7 @@ function Contact() {
                     className="border-2 border-blue-200 rounded-lg focus:outline-none p-3 "
                   />
                 </div>
-                <div className="flex flex-col col-span-2">
+                <div className="flex flex-col md:col-span-2">
                   <label
                     htmlFor="email"
                     className="capitalize text-slate-600 py-2 "
@@ -92,7 +92,7 @@ function Contact() {
                     className="border-2 border-blue-200 rounded-lg focus:outline-none p-3 "
                   />
                 </div>
-                <div className="flex flex-col col-span-2">
+                <div className="flex flex-col md:col-span-2">
                   <label
                     htmlFor="message"
                     className="capitalize text-slate-600 py-2 "
@@ -107,7 +107,7 @@ function Contact() {
                     className="border-2 border-blue-200 rounded-lg focus:outline-none p-3 "
                   ></textarea>
                 </div>
-                <div className="flex items-center justify-center col-span-2">
+                <div className="flex items-center justify-center md:col-span-2">
                   <button
                     type="submit"
                     className="px-6 py-3 rounded-xl bg-blue-500 text-white font-bold uppercase hover:scale-105 duration-200 w-fit "

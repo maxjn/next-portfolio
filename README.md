@@ -2,6 +2,8 @@
 
 This is a practical [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+See the [Live](https://maxjn-next-portfolio.vercel.app/) project.
+
 ## Technologies
 
 - JSX,Materialized Css
@@ -12,7 +14,7 @@ This is a practical [Next.js](https://nextjs.org/) project bootstrapped with [`c
 
 ## Features
 
-- Mobile Firs
+- Mobile First
 - Responsive
 
 ## Installation

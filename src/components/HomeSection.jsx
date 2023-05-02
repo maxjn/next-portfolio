@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function HomeSection() {
   return (
-    <section id="home" className="w-full h-screen text-center">
+    <section id="home" className="w-full h-fit md:h-screen text-center">
       <div className="container max-w-screen-xl  mx-auto pt-24 p-4 flex flex-col justify-around items-center w-full h-full">
         <figure className="rounded-xl overflow-hidden h-64 w-64 mx-auto">
           <Image src={ProfileImg} alt="me" />
@@ -31,7 +31,7 @@ export default function HomeSection() {
         <Link
           scroll={false}
           href="/#me"
-          className="group px-6 py-3 rounded-md bg-gradient-to-r from-blue-600 to-cyan-500 text-white uppercase font-bold tracking-wider flex items-center justify-center"
+          className="group px-6 py-3 rounded-md bg-gradient-to-r from-blue-600 to-cyan-500 text-white uppercase font-bold tracking-wider flex items-center justify-center mt-8 md:mt-0"
         >
           Know More
           <IoIosArrowForward
