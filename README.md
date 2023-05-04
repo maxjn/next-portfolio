@@ -6,11 +6,11 @@ See the [Live](https://maxjn-next-portfolio.vercel.app/) project.
 
 ## Technologies
 
-- JSX,Materialized Css
+- JSX,Tailwind Css
 - ES6
 - React
 - **Nextjs**
-- **Teact Icons**
+- **React Icons**
 
 ## Features
 
