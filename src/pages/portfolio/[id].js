@@ -24,7 +24,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const id = await params.id;
-  console.log(id);
   const data = await portfolio_data.filter((p) => p.url === id)[0];
 
   return {
@@ -33,7 +32,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 function PortfolioSingle({ portfolio }) {
-  console.log(portfolio);
   return (
     <section className="flex w-full h-fit">
       <div className="p-8 pt-24 w-full max-w-screen-xl mx-auto ">
